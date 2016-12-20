@@ -41,7 +41,7 @@ Route::get('acesso-negado', function(){
 
 })->name('acesso-negado');
 
-Route::get('/products/list', 'ProductController@productList')->middleware('admin');
+Route::get('/products/list', 'ProductController@productList')->name('product.list')->middleware('admin');
 
 Route::get('product/delete/{id}', 'ProductController@destroy');
 
@@ -54,3 +54,7 @@ Route::get('show/order/{id}', 'OrderController@show');
 Route::get('orders', 'OrderController@index')->middleware('admin');
 
 Route::post('orders/delivered/{id}', 'OrderController@update')->middleware('admin');
+
+Route::get('edit/product/{id}', 'ProductController@show')->name('product.edit')->middleware('admin');
+
+Route::post('edit/product/{id}', 'ProductController@update')->name('product.edit.store')->middleware('admin');

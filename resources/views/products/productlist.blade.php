@@ -44,7 +44,7 @@
                     <td>{{$product->name}}</td>
                     <td>{{$product->Unitprice}}</td>
                     <td>{{$product->PriceOneHundred}}</td>
-                    <td> <button class="btn btn-primary"> Editar </button>   &nbsp <button class="btn btn-danger" id="deletar" value="{{$product->id}}" onclick="setIdModal(this)" data-toggle="modal" data-target="#myModal"> Deletar </button></td>
+                    <td> <a href="{{route('product.edit', ['id' => $product->id ])}}" class="btn btn-primary"> Editar </a>   &nbsp <button class="btn btn-danger" id="deletar" value="{{$product->id}}" onclick="setIdModal(this)" data-toggle="modal" data-target="#myModal"> Deletar </button></td>
                 </tr>
     @endforeach
         </tbody>

@@ -66,7 +66,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+         $product = Product::find($id);
+
+         return view('products.update', compact('product'));
     }
 
     /**
@@ -89,7 +91,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $row = Product::where('id', $id)->update($request->except('_token'));
+
+        if($row > 0 )
+        {
+            $messege = 'Produto editado com sucesso !' ;
+
+        }else
+        {
+            $messege = "Erro ao editar produto";
+        }
+
+        return redirect()->route('product.list')->with($messege);
     }
 
     /**

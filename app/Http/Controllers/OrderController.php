@@ -47,6 +47,12 @@ class OrderController extends Controller
     public function store(Request $request, $id)
     {
 
+        $ChangeDelimiter = str_replace('/','-', $request->input('deliveryDate'));
+
+        $explodeDate = explode('-',$ChangeDelimiter);
+
+        $deliverydate =  $explodeDate[2] . '-' . $explodeDate[1] . '-' . $explodeDate[0];
+
         Order::create([
             'name' => $request->input('name'),
             'phone' => $request->input('phone'),
@@ -54,7 +60,7 @@ class OrderController extends Controller
             'amount' => $request->input('amount'),
             'price' => $request->input('price'),
             'idProdutos' => $id,
-            'deliveryDate' => $request->input('deliveryDate')
+            'deliveryDate' => $deliverydate
         ]);
 
     }

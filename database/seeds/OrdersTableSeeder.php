@@ -30,13 +30,14 @@ class OrdersTableSeeder extends Seeder
 
           foreach (range(1, 600) as $i ) {
                   $table = Order::create([
+                        'name' => $faker->name,
+                        'phone' => $faker->phoneNumber,
+                        'address' => $faker->address,
                         'amount' => $faker->numberBetween(1,200),
-                        'idProdutos' => $faker->numberBetween(1,400),
+                        'idProdutos' => $faker->numberBetween(2,4),
                         'price' => $faker->numberBetween(1,100),
-                        'idUsers' => $faker->numberBetween(1, 401),
-                        'typeOrder' => $typeOrder,
                         'deliveryDate' => $faker->dateTime($min = 'now', $timezone = date_default_timezone_get()),
-                        'status' => 'Disponível'
+                        'status' => 'Pedido feito'
                   ]);
           }
     }

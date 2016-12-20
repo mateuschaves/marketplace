@@ -72,7 +72,7 @@
 
             <div class="form-group col-sm-4 col-md-3">
                 <label class="" for="amount">Quantidade</label>
-                <input type="number" class="form-control" id="amount" name="amount" min="1"  onchange="calcularValorEncomenda()" name="Unitprice" placeholder="Quantidade">
+                <input type="number" class="form-control" id="amount" name="amount" min="1"  onchange="calcularValorEncomenda()" name="Unitprice" placeholder="Quantidade" required>
                 <p></p>
 
 
@@ -91,23 +91,30 @@
 
                 <div class="form-group ">
                     <label class="" for="phone"> Deixe seu celular </label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ex. (81) 0000-000" maxlength="15">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Ex. (81) 0000-000" maxlength="15" required>
                 </div>
                 <!--  Nome   -->
                     <div class="form-group ">
                         <label class="" for="name">Seu nome </label>
-                        <input type="text" class="form-control" id="name" name="name"   placeholder="Ex. Mateus Henrique" >
+                        <input type="text" class="form-control" id="name" name="name"   placeholder="Ex. Mateus Henrique" required>
                     </div>
 
                 <!--  Endereço   -->
                 <div class="form-group ">
                     <label class="" for="addres">Seu endereço</label>
-                    <input type="text" class="form-control" id="addres" name="address"  value="" placeholder="Ex. Rua major joão coelho, N° 305" >
+                    <input type="text" class="form-control" id="addres" name="address"  value="" placeholder="Ex. Rua major joão coelho, N° 305" required>
                 </div>
 
                 <!-- Data de entrega -->
-                <label class="" for="deliveryDate">Para qual dia ? </label>
-                <input type="date" id="deliveryDate" name="deliveryDate" class="form-control">
+                <label class="" for="deliveryDate">Para quando ?</label>
+                <input  type="text" class="datepicker form-control" name="deliveryDate" id="deliveryDate" data-date-format="mm/dd/yyyy" required>
+                <script>
+                    $('.datepicker').datepicker({
+                        format: 'dd/mm/yyyy',
+                        startDate: '-3d'
+                    });
+                </script>
+
                 <br>
                 <button type="submit" class="btn btn-default"> Encomendar </button>
             </div>

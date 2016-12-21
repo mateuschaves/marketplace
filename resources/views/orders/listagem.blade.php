@@ -30,7 +30,7 @@
                 <td>{{$order->address}}</td>
                 <td>{{$order->amount}}</td>
                 <td>{{$order->products->name}}</td>
-                <td><a href=""> Marcar como entregue </a> </td>
+                <td><a href="{{route('order.delivered', ['id' => $order->id])}}"> Marcar como entregue </a> </td>
             </tr>
 
         @endforeach

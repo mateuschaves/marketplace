@@ -101,7 +101,11 @@ class OrderController extends Controller
     public function update($id)
     {
 
-        Order::where('id', $id)->update(['status' => 'Entregue']);
+       Order::find($id)->update(['status' => 'Entregue']);
+
+       $orders = Order::where('status', 'Pedido feito')->get();
+
+       return view('orders.listagem', compact('orders'));
 
     }
 

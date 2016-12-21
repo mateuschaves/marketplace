@@ -53,7 +53,7 @@ Route::get('show/order/{id}', 'OrderController@show');
 
 Route::get('orders', 'OrderController@index')->middleware('admin');
 
-Route::post('orders/delivered/{id}', 'OrderController@update')->middleware('admin');
+Route::get('orders/delivered/{id}', 'OrderController@update')->name('order.delivered')->middleware('admin');
 
 Route::get('edit/product/{id}', 'ProductController@show')->name('product.edit')->middleware('admin');
 

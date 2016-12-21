@@ -16,8 +16,8 @@
       <ul class="nav navbar-nav">
 
         @if(Auth::check())
-          <li class="active"><a href="{{route('clients')}}">Clientes <span class="sr-only">(current)</span></a></li>
-          <li><a href=""></a></li>
+          <li class=""> <a href="{{route('clients')}}">Clientes <span class="sr-only">(current)</span></a></li>
+          <li><a  href="{{url('/orders')}}">Encomendas</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Produtos <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -25,6 +25,7 @@
               <li><a href="{{url('products/list')}}">Ver</a></li>
             </ul>
           </li>
+
         @endif
       </ul>
 

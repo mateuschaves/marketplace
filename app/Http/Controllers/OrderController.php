@@ -63,6 +63,8 @@ class OrderController extends Controller
             'deliveryDate' => $deliverydate
         ]);
 
+        return view('orders.orderok', ['phone' => $request->input('phone')]);
+
     }
 
     /**

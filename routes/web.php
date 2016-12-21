@@ -21,8 +21,6 @@ Route::get('/home', function(){
     return redirect()->route('products');
 });
 
-Route::get('/clients', 'UsersController@index')->name('clients')->middleware('admin');
-
 Route::get('/show/client/{id}', 'UsersController@show')->middleware('admin');
 
 Route::get('/register-product/', 'ProductController@create')->middleware('admin');

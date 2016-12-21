@@ -16,6 +16,7 @@
             <th>  Endereço </th>
             <th>  Quantidade  </th>
             <th>  Produto </th>
+            <th>  Valor </th>
             <th>  Ações </th>
         </tr>
         </thead>
@@ -30,6 +31,7 @@
                 <td>{{$order->address}}</td>
                 <td>{{$order->amount}}</td>
                 <td>{{$order->products->name}}</td>
+                <td> R$ {{$order->price}}</td>
                 <td><a href="{{route('order.delivered', ['id' => $order->id])}}"> Marcar como entregue </a> </td>
             </tr>
 

@@ -58,3 +58,5 @@ Route::post('orders/delivered/{id}', 'OrderController@update')->middleware('admi
 Route::get('edit/product/{id}', 'ProductController@show')->name('product.edit')->middleware('admin');
 
 Route::post('edit/product/{id}', 'ProductController@update')->name('product.edit.store')->middleware('admin');
+
+Route::post('serch', 'ProductController@index')->name('search');

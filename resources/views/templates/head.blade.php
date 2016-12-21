@@ -11,6 +11,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ URL::asset('css/costumer.css') }}" type="text/css" >
     <!-- DatePicker -->
     <link rel="stylesheet" href="{{ URL::asset('css/datepicker.css') }}" type="text/css" >
 

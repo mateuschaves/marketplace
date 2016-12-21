@@ -14,9 +14,18 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+
+        $search = $request->get('search', '');
+
+        if($search)
+        {
+            $products = Product::search($search)->get();
+        }else
+        {
+            $products = Product::all();
+        }
 
         return view('products.index', compact('products'));
     }
@@ -49,7 +58,7 @@ class ProductController extends Controller
             'Unitprice' => $request->input('Unitprice'),
             'PriceOneHundred' => $request->input('PriceOneHundred'),
             'imageName' => $request->file('imagem')->getClientOriginalName(),
-            'imagePath' => 'app/products/'
+            'imagePath' =>  'storage/app/products/'
         ]);
 
         $diskLocal->putFileAs("products", $file, $file->getClientOriginalName());
@@ -92,7 +101,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
 
-        $row = Product::where('id', $id)->update($request->except('_token'));
+        $row = Product::find($id)->update($request->except('_token'));
 
         if($row > 0 )
         {
@@ -142,5 +151,8 @@ class ProductController extends Controller
 
         return new Response($file, 200);
     }
+
+
+
 
 }

@@ -7,6 +7,26 @@
 
 <div class="container">
 
+    <div class="row search">
+        <form action="{{route('search')}}" method="post">
+
+
+            {{csrf_field()}}
+
+
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="input-group">
+                    <input type="search" name="search" class="form-control" placeholder="Buscar por produtos">
+                    <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Go!</button>
+                </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </form>
+    </div>
+
+
+
 @foreach($products as $product)
             <div class="col-sm-4 col-md-3">
                 <div class="thumbnail">
